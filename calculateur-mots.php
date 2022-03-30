@@ -18,3 +18,4 @@ if (isset($_POST['string']) && !empty($_POST['string'])) {//on vérifie qu'une p
 }else{
     echo 'Renseignez une phrase';//on affiche ceci dans le cas ou l'utilisateur arrive juste sur le site ou qu'il n'a pas renseigné de phrase
 }
+
