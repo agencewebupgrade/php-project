@@ -3,7 +3,7 @@
 //on affiche directement notre formulaire
 echo '
 <form method="POST">
-        <p><input type="text" name="string" placeholder="Entrer une phrase pour avoir son nombre de mots"/></p>
+        <p><textarea type="text" name="string" placeholder="Entrer une phrase pour avoir son nombre de mots"></textarea></p>
         <p><input type="submit" /></p>
 </form>
 ';
