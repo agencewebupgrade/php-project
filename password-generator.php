@@ -51,20 +51,66 @@
     </form>
 
     <?php 
-        
+        //Vérifie si $_POST n'est pas vide et initié
+        if ( !empty($_POST) ) {
 
-        if (!empty($_POST) && ( !empty($_POST['chiffre']) || !empty($_POST['lettreMin']) || !empty($_POST['lettreMaj']) || !empty($_POST['caracSpec']) )) {
-            $chars = getChaine($_POST);
-            
-        } else {
-            echo '<br><hr>Vous devez choisir au moins une méthode';
+            //Vérifie la validité du nombre de caractères dans le mot de passe | 10 < nbCaractère > 20
+            if (!empty($_POST['caracNumber'])) {
+                $passwordLength = $_POST['caracNumber'];
+                if ($_POST['caracNumber'] < 10) {
+                    $passwordLength = 10;
+                } elseif ($_POST['caracNumber'] > 20) {
+                    $passwordLength = 20;
+                }
+            }
+
+            //Vérifie la validité du nombre de mot de passe généré | 1 < password > 10
+            if (!empty($_POST['passwordNumber'])) {
+                $nbPassword = $_POST['passwordNumber'];
+                if ($_POST['passwordNumber'] < 1) {
+                    $nbPassword = 1;
+                } elseif ($_POST['passwordNumber'] > 10) {
+                    $nbPassword = 10;
+                }
+            }
+
+            if (!empty($_POST['chiffre']) || !empty($_POST['lettreMin']) || !empty($_POST['lettreMaj']) || !empty($_POST['caracSpec']) ) {
+
+                $chars = getChaine($_POST);
+                echo '<br><h3>Voici vos mots de passe :</h3>';
+                for ($i = 0; $i < $nbPassword; $i++) {
+                    $password = generatePassword($chars, $passwordLength);
+                    echo '<br>' . $password;
+                }
+
+            }else {
+                echo '<br><hr>Vous devez choisir au moins une méthode';
+            }
         }
-        echo '<pre>';
-        print_r($_POST);
-        echo $chars;
-        echo '</pre>';
+  
     
-    
+        /**
+         * Construit un mot de passe et le renvoie
+         * @param {string} $string - Chaîne de caractère possédant les caractères voulus par l'utilisateur
+         * @param {int} $nbCarac - Nombre de caractère que va comporter le mot de passe final
+         * @return {string} $password - Mot de passe créé aléatoirement
+         */
+        function generatePassword($string, $nbCarac) {
+            $stringLength = strlen($string) - 1;
+            $password = '';
+            for ($i = 0; $i < $nbCarac; $i++) {
+                $randomCarac = rand(0, $stringLength);
+                $password .= $string[$randomCarac];
+            }
+            return $password;
+        }
+
+        /**
+         * Vérifie les conditions données par l'utilisateur grâce aux checkboxs du formulaire
+         * et renvoie la chaîne de caractère corréspondante
+         * @param {Array} $array - Tableau des conditions de l'utilisateur
+         * @return {string} $chaine - Chaîne de caractère respectant les conditions de l'utilisateur
+         */
         function getChaine( $array ) {
             $chaine = '';
 
