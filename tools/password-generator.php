@@ -77,12 +77,11 @@
             if (!empty($_POST['chiffre']) || !empty($_POST['lettreMin']) || !empty($_POST['lettreMaj']) || !empty($_POST['caracSpec']) ) {
 
                 $chars = getChaine($_POST);
+                echo '<br><h3>Voici vos mots de passe :</h3>';
                 for ($i = 0; $i < $nbPassword; $i++) {
                     $password = generatePassword($chars, $passwordLength);
                     echo '<br>' . $password;
-
                 }
-                
 
             }else {
                 echo '<br><hr>Vous devez choisir au moins une méthode';

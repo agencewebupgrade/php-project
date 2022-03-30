@@ -6,6 +6,7 @@
 </form>
 
 <?php
+
     /** Fonction qui convertie un pouce en centimètre.
      * 
      */
@@ -24,7 +25,6 @@
                     $resultat = convertirPouceEnCentimetre($_GET['pouce']);
 
                     // Changer le . en ,
-                    $resultat = (string) $resultat;
                     $resultat = str_replace('.', ',', $resultat);
                     echo htmlentities($resultat);
                 } else {
