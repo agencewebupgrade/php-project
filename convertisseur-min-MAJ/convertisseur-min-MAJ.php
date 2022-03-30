@@ -16,26 +16,19 @@
 
         if (isset($_POST['majusculesOuMinuscules'])) {
 
-        if ($_POST['majusculesOuMinuscules'] == 'minuscules') {
-            echo mettreEnMinuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction
+            if ($_POST['majusculesOuMinuscules'] == 'minuscules') {
+                echo mettreEnMinuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction
 
-        }elseif($_POST['majusculesOuMinuscules'] == 'majuscules') {
-            echo mettreEnMajuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction
+            }elseif($_POST['majusculesOuMinuscules'] == 'majuscules') {
+                echo mettreEnMajuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction
+            }else {
+                echo 'Erreur';
+            }
+
         }else {
-            echo 'Erreur';
-        }
-
-        echo '<pre>';
-        print_r($_POST);
-        echo '<pre>';
-        echo $_POST['majusculesOuMinuscules'];
-
-        }
-        else {
-            echo 'Veuillez cocher une case : Mettre en majuscules ou Mettre en minuscules';
+            echo 'Veuillez cocher une case : Mettre en majuscules ou Mettre en minuscules <br>';
             formulaire();
 
-            //TODO : remettre la value précédamment entrée dans <textarea name="" id="" cols="30" rows="10"></textarea>
         }
 
     }else{
