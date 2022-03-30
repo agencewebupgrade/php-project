@@ -1,6 +1,6 @@
 <?php
 
-    function formulaire() {
+    function formulaire() {//définition de la fonction formulaire
 
     ?>
     <form method="POST">

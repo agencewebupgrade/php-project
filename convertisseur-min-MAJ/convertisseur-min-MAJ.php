@@ -1,6 +1,6 @@
 <?php
 
-    include 'formulaire.php';
+    include 'formulaire.php';//on inclus le fichier formulaire.php qui contient la fonction formulaire()
 
     function mettreEnMajuscules($chaineCaractere) {//on définit la fonction qui met en MAJUSCULES
         $upperWords = strtoupper($chaineCaractere); //on définit la variable qui contient la nouvelle chaine de caracteres en majuscules
@@ -14,24 +14,24 @@
 
     if (isset($_POST['string'])) {//on vérifie qu'une phrase a bien été renseignée
 
-        if (isset($_POST['majusculesOuMinuscules'])) {
+        if (isset($_POST['majusculesOuMinuscules'])) {//on vérifie qu'une des cases "Majuscules" ou "Minuscules" est cochée
 
-            if ($_POST['majusculesOuMinuscules'] == 'minuscules') {
-                echo mettreEnMinuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction
+            if ($_POST['majusculesOuMinuscules'] == 'minuscules') {//dans le cas ou la case minuscules a été cochée
+                echo mettreEnMinuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction mettreEnMinuscules
 
-            }elseif($_POST['majusculesOuMinuscules'] == 'majuscules') {
-                echo mettreEnMajuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction
-            }else {
+            }elseif($_POST['majusculesOuMinuscules'] == 'majuscules') {//dans le cas ou la case majuscules a été cochée
+                echo mettreEnMajuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction mettreEnMajuscules
+
+            }else {//dans les autres cas on affiche une erreur
                 echo 'Erreur';
             }
 
-        }else {
+        }else {//si aucune des cases n'a été cochée
             echo 'Veuillez cocher une case : Mettre en majuscules ou Mettre en minuscules <br>';
-            formulaire();
-
+            formulaire();//on appelle la fonction formulaire
         }
 
-    }else{
+    }else{//quand on arrive sur le formulaire
         echo 'Renseignez une phrase !';//on affiche ceci dans le cas ou l'utilisateur arrive juste sur le site ou qu'il n'a pas renseigné de phrase
-        formulaire();
+        formulaire();//on appelle la fonction formulaire
     }
