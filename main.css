@@ -1,0 +1,22 @@
+html{
+    background-color:rgb(105, 105, 105);
+    color: white;
+}
+input{
+    margin: 1em;
+}
+p,div{
+    margin: 1em; 
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0.7em; 
+}
+header{
+    background-color:rgb(95, 86, 86);
+}
+footer{
+    background-color:rgb(95, 86, 86);
+}
+input[type="submit"]:hover  {
+    background-color: aquamarine;
+}
