@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,10 +35,9 @@ Abdelhalim', 'Aelig', 'Alexian', 'Anatol', 'Araldo', 'Athanaël
 Abdelhamid', 'Afif', 'Alexios', 'Anatole', 'Aram', 'Athanase
 Abdelilah', 'Agapetos', 'Alexis', 'Anatoli', 'Aramis', 'Athmane
 Abdeljalil', 'Agathon', 'Alexy', 'Anatolio', 'Aran', 'Athos
-Abdelkader', 'Agenor', 'Alexys', 'Anaut', 'Ararat', 'Atilla
-Abdel-Kader', 'Agilbert', 'Alfons', 'Ancel', 'Arcade', 'Atman
-Abdelkarim', 'Agnel', 'Alfonse', 'Ancelin', 'Arcadie', 'Atmane
-Abdel-Karim', 'Agostino', 'Alfonso', 'Ancelot', 'Arcady', 'Atom'];
+Abdelkader', 'Agenor', 'Alexys', 'Anaut', 'Ararat', 'Atilla'
+,'Abdel-Kader', 'Agilbert', 'Alfons', 'Ancel', 'Arcade', 'Atman', 'Abdelkarim', 'Agnel', 'Alfonse', 'Ancelin', 'Arcadie', 'Atmane','Abdel-Karim', 'Agostino', 'Alfonso', 'Ancelot','Arcady', 'Atom',' Smith','Martin','Jones','Brown','Thomas','Johnson', 'Williams','Wilson','Miller','Taylor','Davis','Bernard','White','Clark','Hall','Robert','Anderson','Richard','Henry','Thompson','Moore','Roux','Hill','Petit','Anderson','Simon','Walker','Dubois','Michel','Durand','Wright','Wood','Scott','Allen','Moreau','Robinson','ADAMS','YOUNG','LEWIS','DAVID','Jackson','King','John','Green','Baker','Evans','Campbell','Lambert','Roy','James','Hansen','Trynsiki','Harris','Laurent','Robert','Girard','Olsen','Stewart','Bertrand','Blanc','George','Fournier','Lee','Morel','Vincent','Parker','County','Rousseau','Mc turner','Cook','Garnier','GUERIN','BELL','ANDRE','WARD','MORRIS','EDWARDS',
+'MITCHELL','JONSSON','FAURE','JOHANSSON','MERCIER','WATSON','BONNET','PEDERSEN','LEROY','MORGAN','MORIN','ANDERSDR','GAUTIER','COOPER',',GRAY','PERRIN','DUPONT','JENSEN','Shane Barnes','Jeffrey Vang','Gloria Matthews','Annette Sloan','Angela Davis','Jonathan Bradley','Katherine King','Christopher Owens','Robert Wu','Ryan Zavala','Jennifer Mclean','Lauren Mata','Victoria Parker','Melissa Woods','Madison Small','Anita Snow','Rachel Kidd','James Ewing','Jeffery Mccullough','Mary Adams','Kelly Bean','Michael Cochran','Megan Richardson','Dale Thomas','Elizabeth Chang','Ryan Hoffman','John Rowe','Brian Suarez','Brittney Castillo','Brandon Cox','Gregory Brown','Vanessa Mccarthy','Michael Padilla','Kristi Williams','Emily Chen','Amy Wang','Teresa Gonzalez','Richard Greene','Jessica Ward','Robert Ramos','Jessica Hicks','Mr. Eric Williams','Bryan Malone','Joseph Jimenez','David Morgan','Linda Wells','Andrea Stone','Pamela Thomas','Michael Henderson','Carlos Hunt','Justin Robinson','Elizabeth Walker','Kevin Garrison','Taylor Adams','Kelly Anderson','Tiffany Smith','James Cohen','Nicolas Rodriguez','Jamie Smith','Kristen Phillips','Joseph Howell','Marissa Jennings','Lisa Lynn','Darryl Roberts','Brandy Berry'];
 
     // On détermine la taille du tableau
 $nomsLenght = count($noms);
