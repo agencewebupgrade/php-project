@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<header>
+    <nav>
+        <img src="images/logo.jpg" alt="logo">
+        <h1>Mon super site</h1>
+    </nav>
+</header>
+=======
 <?php
 
 //déclaration d'un tableau pour  scanner les fichiers
@@ -113,3 +121,4 @@ $scanned_directory = array_diff($tools, array('..', '.'));
     </footer>
 </body>
 </html>
+>>>>>>> 1ad8c65a8d497a3ba8b12e047b6e04d19e4cf968
