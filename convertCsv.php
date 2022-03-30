@@ -1,9 +1,28 @@
+<h2>Note à l'utilisateur</h2>
+<p>Sélectionne un fichier CSV</p>
+<p>Sélectionne le séparateur du CSV , ou ;</p>
+<h2>Note au testeur</h2>
+<p>Il y a des fichiers pour le test dans /uploads</p>
+
+
 <div class="">
     <form method="post" enctype="multipart/form-data"> 
     
     <div>
         <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />  <!-- 10 Mo -->  
         <input type="file" name="csv" required/>  
+    </div>
+    <p>Select a sign ; ou ,:</p>
+
+    <div>
+        <input type="radio" id=";" name="sign" value=";"
+         checked>
+    <label for=";">;</label>
+    </div>
+
+    <div>
+        <input type="radio" id="," name="sign" value=",">
+     <label for=",">,</label>
     </div>
     <div class="form-example">
         <input type="submit" value="Envoyer!">
@@ -19,7 +38,9 @@ if (!is_dir($uploads_dir)) {
     mkdir($uploads_dir, 0777, true);
 }
 
-if (isset($_FILES['csv'])){                             //Test isset
+
+if (isset($_FILES['csv']) && isset($_POST['sign'])){  
+    $sign = $_POST['sign'];                           //Test isset
     if (!empty($_FILES['csv']['name'])){                //Test vide
         if (($_FILES['csv']['type'] == 'text/csv' )){   //Test si c'est bien un CSV
             // Je recupere tmp_name
@@ -44,25 +65,29 @@ if (isset($_FILES['csv'])){                             //Test isset
                 // Je déplace la csv dans mon dossier
                 $move = move_uploaded_file($tmp_name, "$uploads_dir/$name");
             }
+
             // ****************** /Test si le fichier existe déjà ***********************
+
             // ************************* Traitement du CSV *****************************
-            $cvs_path = "$uploads_dir/$name";
-            // $tab = [];
-            // // Test l'existence du fichier et l'ouvre en lecture seule s'il existe.
-            // if(($handle = @fopen($cvs_path, "r")) !== false)// Le @ sert à ne pas afficher le E_WARNING relatif à une ouverture de fichier qui rate.
-            // {
-            // // Passe en revue chaque ligne du fichier CSV et la stocke dans $data.
-            // while(($datas = fgetcsv($handle, 0, ";")) !== false){
-            //      echo nl2br(print_r($datas, true));
-            //     }
-            // }
-            $file = fopen($cvs_path,"r");
-            print_r(fgetcsv($file));
-            fclose($file);
 
+            $cvs_path = "$uploads_dir/$name"; 
+            $touteslignes = file($cvs_path);                //Recupere le nombre de ligne du fichier
+            $longFLign =strlen($touteslignes[0]);           // Recupere la longueur de la premiere ligne
+            $tab = [];                                      // Tableau vide pour push dedans
+            // Test l'existence du fichier et l'ouvre en lecture seule s'il existe.
+            if(($handle = @fopen($cvs_path, "r")) !== false)// Le @ sert à ne pas afficher le E_WARNING relatif à une ouverture de fichier qui rate.
+            {
+                
+            // Passe en revue chaque ligne du fichier CSV et la stocke dans $data puis push dans tab.
+            while(($datas = fgetcsv($handle, $longFLign,$sign)) !== false){
+                array_push($tab, $datas);
+                }
+            }
+            echo '<pre>';
+            print_r($tab);
+            echo '</pre>';
 
-
-
+            // ************************* /Traitement du CSV *****************************
 
         }else{
             echo '<p>Le fichier doit être au format csv.</p>';
