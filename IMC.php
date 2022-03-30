@@ -62,7 +62,7 @@ function calculIMC(){
                 case $IMC>=30 && $IMC<35 :
                     echo "Vous avez une obésité sevère.";
                     break;
-                case $IMC>=30 && $IMC<35 :
+                case $IMC>=40 :
                     echo "Vous avez une obésité massive.";
                     break;  
             }
