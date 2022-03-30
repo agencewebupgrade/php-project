@@ -18,12 +18,12 @@
     if (!empty(intval($_GET["choosedNumber"]))){
         if($_GET["choosedNumber"]<0){
             $getPositivNumber = $_GET['choosedNumber'] - $_GET['choosedNumber']* 2;
-            echo $getPositivNumber;
+           echo htmlentities($getPositivNumber);
         }else{
-            echo $_GET['choosedNumber'] - $_GET['choosedNumber']* 2;
+            echo htmlentities($_GET['choosedNumber'] - $_GET['choosedNumber']* 2);
         }
     }else {
-        echo'la donné est incorrect ou n\'est pas un nombre';
+        echo htmlentities('la donné est incorrect ou n\'est pas un nombre');
     }
 ?>
 </body>
