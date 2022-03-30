@@ -16,7 +16,7 @@
         // On vérifie s'il y a quelque chose dans l'input 'caract'
     if (!empty($_POST['caract'])) {
             // On compte le nb de caractère avec strlen()
-        echo '\''.$_POST['caract'].'\''.' contient '.strlen($_POST['caract']).' caractères (espace(s) compris).';
+        echo '\'<strong>'.$_POST['caract'].'</strong>\''.' contient <strong>'.strlen($_POST['caract']).'</strong> caractères (espace(s) compris).';
     }
     ?>
 </body>
