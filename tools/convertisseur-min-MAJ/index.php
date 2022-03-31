@@ -12,13 +12,13 @@
         return $lowerWords; //on retourne une chaine de caracteres en minuscules
     }
 
-    if (isset($_POST['string'])) {//on vérifie qu'une phrase a bien été renseignée
+    if (!empty($_POST['string']) && trim($_POST['string']) != "") {//on vérifie qu'une phrase a bien été renseignée
 
-        if (isset($_POST['majusculesOuMinuscules'])) {//on vérifie qu'une des cases "Majuscules" ou "Minuscules" est cochée
+        if (!empty($_POST['majusculesOuMinuscules'])) {//on vérifie qu'une des cases "Majuscules" ou "Minuscules" est cochée
 
             if ($_POST['majusculesOuMinuscules'] == 'minuscules') {//dans le cas ou la case minuscules a été cochée
                 echo mettreEnMinuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction mettreEnMinuscules
-
+                
             }elseif($_POST['majusculesOuMinuscules'] == 'majuscules') {//dans le cas ou la case majuscules a été cochée
                 echo mettreEnMajuscules(htmlentities($_POST['string']));;//on affiche le retour de notre fonction mettreEnMajuscules
 

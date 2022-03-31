@@ -62,6 +62,8 @@
                 } elseif ($_POST['caracNumber'] > 20) {
                     $passwordLength = 20;
                 }
+            } else {
+                $passwordLength = 10;
             }
 
             //Vérifie la validité du nombre de mot de passe généré | 1 < password > 10
@@ -72,6 +74,8 @@
                 } elseif ($_POST['passwordNumber'] > 10) {
                     $nbPassword = 10;
                 }
+            } else {
+                $nbPassword = 1;
             }
 
             if (!empty($_POST['chiffre']) || !empty($_POST['lettreMin']) || !empty($_POST['lettreMaj']) || !empty($_POST['caracSpec']) ) {
@@ -95,7 +99,7 @@
          * @param {int} $nbCarac - Nombre de caractère que va comporter le mot de passe final
          * @return {string} $password - Mot de passe créé aléatoirement
          */
-        function generatePassword($string, $nbCarac) {
+        function generatePassword(string $string, int $nbCarac) {
             $stringLength = strlen($string) - 1;
             $password = '';
             for ($i = 0; $i < $nbCarac; $i++) {
