@@ -2,3 +2,4 @@
 
 Anthony JOUSSERAND
 Enzo GRIGNAFFINI
+Amandine REGAD
